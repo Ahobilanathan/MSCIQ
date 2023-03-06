@@ -11,11 +11,10 @@ import pages.UpdateGOCPage;
 import projectSpecification.ProjectSpecification;
 
 public class TestCase extends ProjectSpecification{
-	String name = "samplename008";
-	String code = "samplecode008";
-	
-	//String name1 = "samplename08";
-	//String code1 = "samplename08";
+	String name = "Demooname12";
+	String code = "Demoocode12";
+	String name1 = "Demooname13";
+	String code1 = "Demoocode13";
 	
 	@Test (priority = 1)
 	public void testCreateGOC() {
@@ -35,15 +34,22 @@ public class TestCase extends ProjectSpecification{
 	
 	@Test (priority =3)
 	public void testUpdateGOC() throws InterruptedException, AWTException {
-		new UpdateGOCPage().SelectCountry().SelectCurrency().clickUpdateBtn();
+		new UpdateGOCPage().enterName(name1).enterCode(code1).SelectCountry().SelectCurrency().clickUpdateBtn();
 		
 	}
+	
 	@Test (priority = 4)
+	public void testPrintUpdatedGOC() {
+		System.out.println("********************AFTER UPDATION********************");
+		new BusinessStructurePage().clickCreatedGOC(name1).printCreatedGOC();
+	}
+	
+	@Test (priority = 5)
 	public void testDeleteGOC() throws AWTException, InterruptedException
 	{
 		Thread.sleep(3000);
 		refresh();
-		new BusinessStructurePage().clickCreatedGOC(name).deleteGOC();
+		new BusinessStructurePage().clickCreatedGOC(name1).deleteGOC();
 	}
 
 }

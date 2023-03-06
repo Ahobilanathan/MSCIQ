@@ -19,13 +19,13 @@ public class CreateGOC extends ProjectSpecification {
 	
 	public CreateGOC enterName(String str)
 	{
-		type(driver.findElement(name), str);
+		clearAndType(driver.findElement(name), str);
 		return this;
 	}
 	
 	public CreateGOC enterCode(String str)
 	{
-		type(driver.findElement(code), str);
+		clearAndType(driver.findElement(code), str);
 		return this;
 	}
 	public CreateGOC SelectCurrency()

@@ -13,11 +13,11 @@ public class LoginPage extends ProjectSpecification{
 	
 	public LoginPage enterEmail(String email) {
 		
-		type(driver.findElement(emailID), email);
+		clearAndType(driver.findElement(emailID), email);
 		return this;
 	}
 	public LoginPage enterpassword(String pwd){
-		type(driver.findElement(password), pwd);
+		clearAndType(driver.findElement(password), pwd);
 		return this;
 		
 	}
